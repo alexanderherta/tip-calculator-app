@@ -34,7 +34,7 @@ body {
   border-radius: 15px;
   height: 50%;
   width: 75%;
-  padding: 40px;
+  padding: 30px;
   display: flex;
   gap: 40px;
 }
@@ -49,7 +49,7 @@ body {
 .result-area {
   background-color: hsl(183, 100%, 15%);
   width: 50%;
-  padding: 40px;
+  padding: 30px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -62,6 +62,7 @@ body {
 
 .inputs {
   background-color: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%); 
   height: 35px;
   width: 100%;
   border-radius: 5px;
@@ -145,6 +146,16 @@ body {
   cursor: pointer;
   background-color: hsl(180, 6%, 79%);
   transition: 0.2s;
+}
+
+#custom-input {
+  width: 30%;
+  direction: ltr;
+}
+
+#custom-input::placeholder {
+  font-size: 17px;
+  text-align: center;
 }
 
 .people-area {

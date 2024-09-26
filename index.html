@@ -32,7 +32,7 @@
           <div class="bottom-buttons">
             <button id="25-button" class="tip-buttons">25%</button>
             <button id="50-button" class="tip-buttons">50%</button>
-            <button id="custom-button" class="tip-buttons">Custom</button>
+            <input id="custom-input" class="inputs" type="text" placeholder="Custom">
           </div>
         </div>
       </div>
@@ -49,14 +49,14 @@
           <p class="info-text result-info-text">Tip Amount</p>
           <p class="result-small-text">/ person</p>
         </div>
-        <p id="tip-amount" class="result-numbers">$0.00</p>
+        <p id="tip-amount" class="result-numbers">$<span id="tip-amount-display">0.00</span></p>
       </div>
       <div class="total-area">
         <div class="total-area-labels">
           <p class="info-text result-info-text">Total</p>
           <p class="result-small-text">/ person</p>
         </div>
-        <p id="total-amount" class="result-numbers">$0.00</p>
+        <p id="total-amount" class="result-numbers">$<span id="total-amount-display">0.00</span></p>
       </div>
       <button id="reset-button">RESET</button>
     </div>
