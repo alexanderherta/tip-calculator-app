@@ -3,6 +3,7 @@
 * {
   padding: 0;
   margin: 0;
+  border: none;
   box-sizing: border-box;
   font-family: "Space Mono", monospace;
   font-weight: 700;
@@ -35,15 +36,14 @@ body {
   width: 75%;
   padding: 40px;
   display: flex;
+  gap: 40px;
 }
 
 .calculate-area {
-  background-color: antiquewhite;
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-right: 40px;
 }
 
 .result-area {
@@ -56,7 +56,6 @@ body {
 }
 
 .inputs {
-  border: none;
   background-color: hsl(189, 41%, 97%);
   height: 35px;
   width: 100%;
@@ -78,6 +77,69 @@ body {
   color: transparent;
 }
 
+#bill-input-wrapper {
+  position: relative;
+}
+
+#bill-input-wrapper::before {
+  content: url("./frontend-mentor-assets/images/icon-dollar.svg");
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
+#people-input-wrapper {
+  position: relative;
+}
+
+#people-input-wrapper::before {
+  content: url("./frontend-mentor-assets/images/icon-person.svg");
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
 .calculate-area p {
   color: hsl(186, 14%, 43%);
+  margin-bottom: 5px;
+}
+
+.percentage-area {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.top-buttons, .bottom-buttons {
+  display: flex;
+  justify-content: space-between;
+  height: 50%;
+}
+
+.tip-buttons {
+  width: 30%;
+  border-radius: 5px;
+  background-color: hsl(183, 100%, 15%);
+  color: white;
+  font-size: 19px;
+}
+
+.tip-buttons:hover {
+  cursor: pointer;
+  background-color: hsl(183, 100%, 21%);
+}
+
+#custom-button {
+  color: hsl(186, 14%, 43%);
+  background-color: hsl(189, 41%, 97%);
+}
+
+#custom-button:hover {
+  cursor: pointer;
+  background-color: hsl(180, 6%, 79%);
+}
+
+.people-area {
+  margin-bottom: 10px;
 }
