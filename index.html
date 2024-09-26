@@ -16,13 +16,13 @@
   <div class="content">
     <div class="calculate-area">
       <div class="bill-area">
-        <p>Bill</p>
+        <p class="info-text">Bill</p>
         <div id="bill-input-wrapper">
           <input id="bill-input" class="inputs" type="text" placeholder="0">
         </div>
       </div>
       <div class="select-area">
-        <p>Select Tip %</p>
+        <p class="info-text">Select Tip %</p>
         <div class="percentage-area">
           <div class="top-buttons">
             <button id="5-button" class="tip-buttons">5%</button>
@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="people-area">
-        <p>Number of People</p>
+        <p class="info-text">Number of People</p>
         <div id="people-input-wrapper">
           <input id="people-input" class="inputs" type="text" placeholder="0">
         </div>
@@ -46,17 +46,17 @@
     <div class="result-area">
       <div class="tip-amount-area">
         <div class="tip-amount-labels">
-          <p>Tip Amount</p>
-          <p>/ person</p>
+          <p class="info-text result-info-text">Tip Amount</p>
+          <p class="result-small-text">/ person</p>
         </div>
-        <p>$0.00</p>
+        <p id="tip-amount" class="result-numbers">$0.00</p>
       </div>
       <div class="total-area">
         <div class="total-area-labels">
-          <p>Total</p>
-          <p>/ person</p>
+          <p class="info-text result-info-text">Total</p>
+          <p class="result-small-text">/ person</p>
         </div>
-        <p>$0.00</p>
+        <p id="total-amount" class="result-numbers">$0.00</p>
       </div>
       <button id="reset-button">RESET</button>
     </div>
