@@ -40,6 +40,10 @@ body {
 .calculate-area {
   background-color: antiquewhite;
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 40px;
 }
 
 .result-area {
@@ -47,4 +51,33 @@ body {
   width: 50%;
   padding: 40px;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs {
+  border: none;
+  background-color: hsl(189, 41%, 97%);
+  height: 35px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 20px;
+  direction: rtl;
+}
+
+.inputs::placeholder {
+  text-align: right;
+}
+
+.inputs:focus {
+  outline: 1px solid rgb(0, 0, 0, 0.5);
+}
+
+.inputs:focus::placeholder {
+  color: transparent;
+}
+
+.calculate-area p {
+  color: hsl(186, 14%, 43%);
 }
