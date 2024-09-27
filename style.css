@@ -68,7 +68,6 @@ body {
   border-radius: 5px;
   padding: 0 10px;
   font-size: 20px;
-  direction: rtl;
 }
 
 .inputs::placeholder {
@@ -148,12 +147,12 @@ body {
   transition: 0.2s;
 }
 
-#custom-input {
+#tip-input {
   width: 30%;
   direction: ltr;
 }
 
-#custom-input::placeholder {
+#tip-input::placeholder {
   font-size: 17px;
   text-align: center;
 }
