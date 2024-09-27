@@ -16,40 +16,39 @@ let tipButtonValue = 0;
 let bill;
 let tipPercent;
 let people;
-
-document.addEventListener("keypress", () => {
-  if(billInput.value != "" && peopleInput.value != "") {
-    if(tipButtonValue != 0 || tipInput.value != "") {
-      checkInput();
-    }
-  }
-});
+let tipAmount;
+let total;
 
 tipButtonsArea.addEventListener("click", (e) => {
   if(e.target.id == "five-button") {
     tipButtonValue = 5
+    tipInput.value = "";
     resetButtonColors();
     button5.style.backgroundColor = "hsl(172, 67%, 45%)";
   } else if(e.target.id == "ten-button") {
     tipButtonValue = 10;
+    tipInput.value = "";
     resetButtonColors();
     button10.style.backgroundColor = "hsl(172, 67%, 45%)";
   } else if(e.target.id == "fifteen-button") {
     tipButtonValue = 15;
+    tipInput.value = "";
     resetButtonColors();
     button15.style.backgroundColor = "hsl(172, 67%, 45%)";
   } else if(e.target.id == "twenty-five-button") {
     tipButtonValue = 25;
+    tipInput.value = "";
     resetButtonColors();
     button25.style.backgroundColor = "hsl(172, 67%, 45%)";
   } else if(e.target.id == "fifty-button") {
     tipButtonValue = 50;
+    tipInput.value = "";
     resetButtonColors();
     button50.style.backgroundColor = "hsl(172, 67%, 45%)";
   }
 });
 
-tipInput.addEventListener("keypress", () => {
+tipInput.addEventListener("input", () => {
   tipButtonValue = 0;
   resetButtonColors();
 });
@@ -98,7 +97,25 @@ function checkPeopleInput() {
 }
 
 function calculateTip() {
-  console.log(bill);
-  console.log(tipPercent);
-  console.log(people);
+  tipPercent = tipPercent / 100;
+  tipAmount = bill * tipPercent;
+  tipAmount = Math.round(tipAmount * 100) / 100;
+
+  total = bill / people;
+  total = Math.round(total * 100) / 100;
+  
+  tipAmount = tipAmount.toString();
+  total = total.toString();
+
+  let decimalSearch = tipAmount.charAt(tipAmount.length - 2)
+  if(decimalSearch == ".") {
+    tipAmount = tipAmount + "0";
+  }
+  decimalSearch = total.charAt(total.length - 2);
+  if(decimalSearch == ".") {
+    total = total + "0";
+  }
+
+  console.log(tipAmount);
+  console.log(total);
 }

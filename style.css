@@ -182,7 +182,7 @@ body {
   line-height: 0.9;
 }
 
-#reset-button {
+#calculate-reset-button {
   margin-top: auto;
   padding: 5px;
   border-radius: 5px;
@@ -190,7 +190,7 @@ body {
   color: hsl(183, 100%, 15%);
 }
 
-#reset-button:hover {
+#calculate-reset-button:hover {
   background-color: hsl(172, 79%, 54%);
   cursor: pointer;
   transition: 0.3s;
