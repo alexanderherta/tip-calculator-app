@@ -4,6 +4,12 @@ const billInput = document.querySelector("#bill-input");
 const tipInput = document.querySelector("#tip-input");
 const peopleInput = document.querySelector("#people-input");
 const tipButtonsArea = document.querySelector(".percentage-area");
+const button5 = document.querySelector("#five-button");
+const button10 = document.querySelector("#ten-button");
+const button15 = document.querySelector("#fifteen-button");
+const button25 = document.querySelector("#twenty-five-button");
+const button50 = document.querySelector("#fifty-button");
+
 let bill;
 let tipPercent;
 let people;
@@ -21,23 +27,46 @@ document.addEventListener("keypress", () => {
 });
 
 tipButtonsArea.addEventListener("click", (e) => {
-  if(e.target.id == "5-button") {
+  if(e.target.id == "five-button") {
     tipButtonValue = 5
-  } else if(e.target.id == "10-button") {
+    resetButtonColors();
+    button5.style.backgroundColor = "hsl(172, 67%, 45%)";
+  } else if(e.target.id == "ten-button") {
     tipButtonValue = 10;
-  } else if(e.target.id == "15-button") {
+    resetButtonColors();
+    button10.style.backgroundColor = "hsl(172, 67%, 45%)";
+  } else if(e.target.id == "fifteen-button") {
     tipButtonValue = 15;
-  } else if(e.target.id == "25-button") {
+    resetButtonColors();
+    button15.style.backgroundColor = "hsl(172, 67%, 45%)";
+  } else if(e.target.id == "twenty-five-button") {
     tipButtonValue = 25;
-  } else if(e.target.id == "50-button") {
+    resetButtonColors();
+    button25.style.backgroundColor = "hsl(172, 67%, 45%)";
+  } else if(e.target.id == "fifty-button") {
     tipButtonValue = 50;
+    resetButtonColors();
+    button50.style.backgroundColor = "hsl(172, 67%, 45%)";
   }
 });
+
+tipInput.addEventListener("keypress", () => {
+  tipButtonValue = 0;
+  resetButtonColors();
+});
+
+function resetButtonColors() {
+  button5.style.backgroundColor = "hsl(183, 100%, 15%)";
+  button10.style.backgroundColor = "hsl(183, 100%, 15%)";
+  button15.style.backgroundColor = "hsl(183, 100%, 15%)";
+  button25.style.backgroundColor = "hsl(183, 100%, 15%)";
+  button50.style.backgroundColor = "hsl(183, 100%, 15%)";
+}
 
 function checkInput() {
   checkBillInput();
   checkTipInput();
-  checkPeopleInput();
+  // checkPeopleInput();
 }
 
 function checkBillInput() {
