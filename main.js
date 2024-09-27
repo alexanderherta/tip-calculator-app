@@ -9,14 +9,13 @@ const button10 = document.querySelector("#ten-button");
 const button15 = document.querySelector("#fifteen-button");
 const button25 = document.querySelector("#twenty-five-button");
 const button50 = document.querySelector("#fifty-button");
-
-let bill;
-let tipPercent;
-let people;
 let billInputValid = false;
 let tipInputValid = false;
 let peopleInputValid = false;
 let tipButtonValue = 0;
+let bill;
+let tipPercent;
+let people;
 
 document.addEventListener("keypress", () => {
   if(billInput.value != "" && peopleInput.value != "") {
@@ -66,7 +65,10 @@ function resetButtonColors() {
 function checkInput() {
   checkBillInput();
   checkTipInput();
-  // checkPeopleInput();
+  checkPeopleInput();
+  if(billInputValid && tipInputValid && peopleInputValid) {
+    calculateTip();
+  }
 }
 
 function checkBillInput() {
@@ -77,5 +79,26 @@ function checkBillInput() {
 }
 
 function checkTipInput() {
-  
+  if(tipButtonValue == 0) {
+    tipPercent = Number(tipInput.value);
+  } else {
+    tipPercent = tipButtonValue;
+  }
+
+  if(typeof tipPercent == "number" && !isNaN(tipPercent) && tipPercent > 0 && tipPercent <= 100) {
+    tipInputValid = true;
+  }
+}
+
+function checkPeopleInput() {
+  people = Number(peopleInput.value);
+  if(Number.isInteger(people)) {
+    peopleInputValid = true;
+  }
+}
+
+function calculateTip() {
+  console.log(bill);
+  console.log(tipPercent);
+  console.log(people);
 }
