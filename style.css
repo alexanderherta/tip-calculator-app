@@ -68,6 +68,7 @@ body {
   border-radius: 5px;
   padding: 0 10px;
   font-size: 20px;
+  direction: rtl;
 }
 
 .inputs::placeholder {
@@ -257,6 +258,12 @@ body {
   }
 }
 
+@media (max-width: 600px) {
+  #reset-button, #calculate-button {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 515px) {
   .content {
     padding: 20px;
@@ -267,6 +274,10 @@ body {
 @media (max-width: 465px) {
   .result-area {
     padding: 20px;
+  }
+
+  #reset-button, #calculate-button {
+    font-size: 13px;
   }
 }
 
@@ -293,5 +304,13 @@ body {
 }
 
 @media (max-height: 730px) {
-  
+  .result-numbers {
+    font-size: 26px;
+  }
+}
+
+@media (max-height: 630px) {
+  .total-buttons {
+    flex-direction: row;
+  }
 }
