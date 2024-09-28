@@ -182,15 +182,34 @@ body {
   line-height: 0.9;
 }
 
-#calculate-reset-button {
+.total-buttons {
+  display: flex;
+  flex-direction: column;
   margin-top: auto;
+  gap: 10px;
+}
+
+#reset-button {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(114, 114, 114, 0.5);
+  color: hsl(182, 19%, 26%);
+}
+
+.reset-button-hover:hover {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+#calculate-button {
   padding: 5px;
   border-radius: 5px;
   background-color: hsl(172, 67%, 45%);
   color: hsl(183, 100%, 15%);
 }
 
-#calculate-reset-button:hover {
+#calculate-button:hover {
   background-color: hsl(172, 79%, 54%);
   cursor: pointer;
   transition: 0.3s;

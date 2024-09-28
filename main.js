@@ -9,6 +9,9 @@ const button10 = document.querySelector("#ten-button");
 const button15 = document.querySelector("#fifteen-button");
 const button25 = document.querySelector("#twenty-five-button");
 const button50 = document.querySelector("#fifty-button");
+const resetButton = document.querySelector("#reset-button");
+resetButton.disabled = true;
+let resetButtonColorOn = false;
 let billInputValid = false;
 let tipInputValid = false;
 let peopleInputValid = false;
@@ -115,7 +118,39 @@ function calculateTip() {
   if(decimalSearch == ".") {
     total = total + "0";
   }
+  displayResults();
+}
 
-  console.log(tipAmount);
-  console.log(total);
+function displayResults() {
+  tipAmountDisplay.innerText = tipAmount;
+  totalAmountDisplay.innerText = total;
+  resetButton.disabled = false;
+  resetButton.style.backgroundColor = "hsl(172, 67%, 45%)";
+  resetButton.style.color = "hsl(183, 100%, 15%)";
+  resetButton.classList.add("reset-button-hover");
+  resetButtonColorOn = true;
+  resetButton.addEventListener("mouseover", () => {
+    if(resetButtonColorOn) {
+      resetButton.style.backgroundColor = "hsl(172, 79%, 54%)";
+    }
+  });
+  resetButton.addEventListener("mouseleave", () => {
+    if(resetButtonColorOn) {
+      resetButton.style.backgroundColor = "hsl(172, 67%, 45%)";
+    }
+  });
+}
+
+function resetInput() {
+  billInput.value = "";
+  tipButtonValue = 0;
+  resetButtonColors();
+  tipInput.value = "";
+  peopleInput.value = "";
+  tipAmountDisplay.innerText = "0.00";
+  totalAmountDisplay.innerText = "0.00";
+  resetButton.classList.remove("reset-button-hover");
+  resetButton.style.backgroundColor = "rgba(114, 114, 114, 0.5)";
+  resetButton.style.color = "hsl(182, 19%, 26%)";
+  resetButtonColorOn = false;
 }
